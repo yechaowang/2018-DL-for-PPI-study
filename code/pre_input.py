@@ -46,7 +46,6 @@ def autocov(inputmat, num, iterator, averagemat):
 		outarray.append(tmpout)
 	outarray1 = array(outarray)
 	sklearn.preprocessing.normalize(outarray1, norm='l2')
-	print (outarray1.shape)
 	return outarray1
 
 with open('test.txt', 'r') as file:
@@ -61,9 +60,7 @@ with open('test.txt', 'r') as file:
 				count = count + 1
 			tmparray = np.array(tmplist)
 			sumx = tmparray.sum(axis = 0)
-#			print (sumx)
 			print ('\n\n')
-#			print (len(tmparray))
 			autocov(tmparray, count, 30, sumx)
 			count = 0
 			sumx = []
